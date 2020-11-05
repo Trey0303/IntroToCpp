@@ -1,22 +1,16 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
+#include "randh.h"
 
-int random(int max) 
-{
-    return rand() % (max + 1);
-}
 
-int random(int min, int max) {
-    int range = max - min;
-    return min + random(range);
-}
+
 
 int main()
 {
     int inputMax = 0;
     std::cout << "Hello World" << std::endl;
-
+    //rand example
     std::srand(std::time(nullptr)); // use current time as seed for random generator
     int random_variable = std::rand();
     std::cout << "Random value on [0 " << RAND_MAX << "]: "
@@ -30,13 +24,24 @@ int main()
         std::cout << x << ' ';
     }
 
+    //rand one int
+    std::cout << "" << std::endl;
+    //player input rand max number
+    std::cin >> inputMax;
+    //Given one integer, return a random number between 0 and that given integer
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << random(inputMax) << ", ";
+    }
+
+    //rand two int
     std::cout << "" << std::endl;
     //player input rand max number
     std::cin >> inputMax;
     //Given one integer, return a random number between 0 and that given integer
     for (int i = 0; i < 10; i++) 
     {
-        std::cout << random(5, inputMax) << std::endl;
+        std::cout << random(5, inputMax) << ", ";
     }
     return 0;
 }
