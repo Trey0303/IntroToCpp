@@ -2,14 +2,19 @@
 #include <iostream>
 #include <ctime>
 
-int random(int upper) 
+int random(int max) 
 {
-    return rand();
+    return rand() % (max + 1);
+}
+
+int random(int min, int max) {
+    int range = max - min;
+    return min + random(range);
 }
 
 int main()
 {
-    int input = 0;
+    int inputMax = 0;
     std::cout << "Hello World" << std::endl;
 
     std::srand(std::time(nullptr)); // use current time as seed for random generator
@@ -27,12 +32,11 @@ int main()
 
     std::cout << "" << std::endl;
     //player input rand max number
-    std::cin >> input;
+    std::cin >> inputMax;
     //Given one integer, return a random number between 0 and that given integer
-    std::srand(std::time(nullptr)); // use current time as seed for random generator
-    int rand_variable = std::rand()% input;// random number between 0 and input
-    std::cout << "Random value on [0 " << input << "]: "
-        << rand_variable << '\n';
-
+    for (int i = 0; i < 10; i++) 
+    {
+        std::cout << random(5, inputMax) << std::endl;
+    }
     return 0;
 }
