@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IntroToCpp", "IntroToCpp\IntroToCpp.vcxproj", "{23F40EAF-4737-4447-8B38-AA6236A6AAB4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Arrays", "Arrays\Arrays.vcxproj", "{3717213C-8EE9-41D6-A044-C28C347686BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{23F40EAF-4737-4447-8B38-AA6236A6AAB4}.Release|x64.Build.0 = Release|x64
 		{23F40EAF-4737-4447-8B38-AA6236A6AAB4}.Release|x86.ActiveCfg = Release|Win32
 		{23F40EAF-4737-4447-8B38-AA6236A6AAB4}.Release|x86.Build.0 = Release|Win32
+		{3717213C-8EE9-41D6-A044-C28C347686BF}.Debug|x64.ActiveCfg = Debug|x64
+		{3717213C-8EE9-41D6-A044-C28C347686BF}.Debug|x64.Build.0 = Debug|x64
+		{3717213C-8EE9-41D6-A044-C28C347686BF}.Debug|x86.ActiveCfg = Debug|Win32
+		{3717213C-8EE9-41D6-A044-C28C347686BF}.Debug|x86.Build.0 = Debug|Win32
+		{3717213C-8EE9-41D6-A044-C28C347686BF}.Release|x64.ActiveCfg = Release|x64
+		{3717213C-8EE9-41D6-A044-C28C347686BF}.Release|x64.Build.0 = Release|x64
+		{3717213C-8EE9-41D6-A044-C28C347686BF}.Release|x86.ActiveCfg = Release|Win32
+		{3717213C-8EE9-41D6-A044-C28C347686BF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

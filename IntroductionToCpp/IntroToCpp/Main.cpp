@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <iostream>
+//for rand
 #include <ctime>
 #include "randh.h"
 
@@ -43,5 +44,8 @@ int main()
     {
         std::cout << random(5, inputMax) << ", ";
     }
+
+
+
     return 0;
 }
