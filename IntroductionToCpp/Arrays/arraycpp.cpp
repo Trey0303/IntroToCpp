@@ -50,8 +50,10 @@ int findIndex(int numbers[], size_t size, int value, int start)
 	{
 		if (numbers[i] == value)
 		{
-			returnValue = i;
+			//returnValue = i;
+			return i;
 		}
 	}
-	return returnValue;
+	return returnValue = -1;
+	//return returnValue;
 }
