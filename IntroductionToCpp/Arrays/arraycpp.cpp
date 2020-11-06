@@ -57,3 +57,16 @@ int findIndex(int numbers[], size_t size, int value, int start)
 	return returnValue = -1;
 	//return returnValue;
 }
+
+int countElement(int numbers[], size_t size, int value, int start)
+{
+	int count = 0;
+	for (int i = start; i < size; i++)
+	{
+		if (numbers[i] == value)
+		{
+			count++;
+		}
+	}
+	return count;
+}

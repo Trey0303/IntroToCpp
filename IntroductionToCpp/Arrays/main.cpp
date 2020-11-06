@@ -9,7 +9,7 @@ int main()
 	//create array
 	//index       0 ,1,2 ,3,4 ,5, 6,7,8,9
 	//array size: 1 ,2,3 ,4,5 ,6, 7,8,9,10
-	int array[10]{10,1,25,3,33,5,26,7,6,9};
+	int array[10]{10,1,25,1,33,1,26,7,6,9};
 
 	//get size of array
 	int size = 0;
@@ -33,8 +33,14 @@ int main()
 	std::cout << std::endl << largestNumFinal;
 
 	//find value in array, return index of value
+	//                          array[],size,value,start
 	int returnValue = findIndex(array, size, 6, 2);
 	std::cout << std::endl << returnValue;
+
+	//count number of times value is found in array from starting point
+	//                       array[],size,value,start
+	int count = countElement(array, size, 1, 2);
+	std::cout << std::endl << count;
 
 	return 0;
 }
