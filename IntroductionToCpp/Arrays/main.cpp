@@ -9,7 +9,7 @@ int main()
 	//create array
 	//index       0 ,1,2 ,3,4 ,5, 6,7,8,9
 	//array size: 1 ,2,3 ,4,5 ,6, 7,8,9,10
-	int array[10]{10,1,25,1,33,1,26,7,6,9};
+	int array[10]{10,1,25,4,33,3,26,7,6,9};
 
 	//get size of array
 	int size = 0;
@@ -41,6 +41,10 @@ int main()
 	//                       array[],size,value,start
 	int count = countElement(array, size, 1, 2);
 	std::cout << std::endl << count;
+
+	//if array has two or more of the same number say no to being unique, else yes
+	ArrayUniqueness(array, size);
+
 
 	return 0;
 }

@@ -70,3 +70,34 @@ int countElement(int numbers[], size_t size, int value, int start)
 	}
 	return count;
 }
+
+int ArrayUniqueness(int numbers[], size_t size)
+{
+	std::cout << std::endl;
+	int arrayb[10];
+	//get size of array
+	int sizeb = 0;
+	for (int i : arrayb)
+	{
+		sizeb++;
+	}
+	for (size_t i = 0; i < size; i++)
+	{
+		arrayb[i] = numbers[i];
+		std::cout <<  arrayb[i] << ", ";
+	}
+	
+	for (int i = 0; i < size; i++)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			if (numbers[i] == numbers[i])
+			{
+				std::cout << std::endl << "No";
+				return 0;
+			}
+		}
+	}
+	std::cout << std::endl << "Yes";
+	return 0;
+}
