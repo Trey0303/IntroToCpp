@@ -9,7 +9,7 @@ int main()
 	//create array
 	//index       0 ,1,2 ,3,4 ,5, 6,7,8,9
 	//array size: 1 ,2,3 ,4,5 ,6, 7,8,9,10
-	int array[10]{10,1,25,4,33,3,26,7,6,9};
+	int array[10]{10,1,25,4,33,4,26,7,6,9};
 
 	//get size of array
 	int size = 0;

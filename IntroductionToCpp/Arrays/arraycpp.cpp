@@ -81,7 +81,7 @@ int ArrayUniqueness(int numbers[], size_t size)
 	{
 		sizeb++;
 	}
-	for (size_t i = 0; i < size; i++)
+	for (size_t i = 0; i < sizeb; i++)
 	{
 		arrayb[i] = numbers[i];
 		std::cout <<  arrayb[i] << ", ";
@@ -89,12 +89,18 @@ int ArrayUniqueness(int numbers[], size_t size)
 	
 	for (int i = 0; i < size; i++)
 	{
-		for (int i = 0; i < size; i++)
+		for (int i2 = 0; i2 < sizeb; i2++)
 		{
-			if (numbers[i] == numbers[i])
+			int count = 0;
+			if (numbers[i] == numbers[i2])
 			{
-				std::cout << std::endl << "No";
-				return 0;
+				count++;
+				if (count >= 2)
+				{
+					std::cout << std::endl << "No";
+					return 0;
+				}
+				
 			}
 		}
 	}
