@@ -73,29 +73,20 @@ int countElement(int numbers[], size_t size, int value, int start)
 
 int ArrayUniqueness(int numbers[], size_t size)
 {
-	std::cout << std::endl;
-	int arrayb[10];
-	//get size of array
-	int sizeb = 0;
-	for (int i : arrayb)
-	{
-		sizeb++;
-	}
-	for (size_t i = 0; i < sizeb; i++)
-	{
-		arrayb[i] = numbers[i];
-		std::cout <<  arrayb[i] << ", ";
-	}
-	
+	//go through array grabbing and setting a value to compare
+	//reset count to zero
 	for (int i = 0; i < size; i++)
 	{
-		for (int i2 = 0; i2 < sizeb; i2++)
+		int value = numbers[i];
+		int count = 0;
+		//go through array comparing each number to value
+		for (int i2 = 0; i2 < size; i2++)
 		{
-			int count = 0;
-			if (numbers[i] == numbers[i2])
+			
+			if (numbers[i2] == value)
 			{
 				count++;
-				if (count >= 2)
+				if (count > 1)
 				{
 					std::cout << std::endl << "No";
 					return 0;
@@ -105,5 +96,39 @@ int ArrayUniqueness(int numbers[], size_t size)
 		}
 	}
 	std::cout << std::endl << "Yes";
+	return 0;
+}
+
+int reverse(int numbers[], size_t size, int start, int end)
+{
+	
+	while (start < end) 
+	{
+		int temp = numbers[start];
+		numbers[start] = numbers[end];
+		numbers[end] = temp;
+		start++;
+		std::cout << *numbers;
+	}
+			
+
+		//for (int i = 0; i < size; i++)
+		//{
+		//	int value = numbers[i];
+		//	//go through array comparing each number to value
+		//	for (int i2 = 0; i2 < size; i2++)
+		//	{
+
+		//		if (numbers[i2] > value)
+		//		{
+		//			int temp = numbers[i];
+		//			numbers[i2] = value;
+		//			numbers[] = temp;
+		//			start++;
+		//			std::cout << *numbers;
+
+		//		}
+		//	}
+		//}
 	return 0;
 }

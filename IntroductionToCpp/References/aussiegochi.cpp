@@ -5,11 +5,15 @@
 void feedAussie(Aussiegochi& aus)
 {
 	aus.hunger = aus.hunger - 3;
+	aus.happiness = aus.happiness + 2;
+	aus.sanity = aus.sanity + 3;
 }
 
 void waterAussie(Aussiegochi& aus)
 {
 	aus.thirst = aus.thirst - 3;
+	aus.happiness = aus.happiness + 2;
+	aus.sanity = aus.sanity + 3;
 }
 
 void abuseAussie(Aussiegochi& aus)
@@ -21,5 +25,5 @@ void abuseAussie(Aussiegochi& aus)
 void coddleAussie(Aussiegochi& aus)
 {
 	aus.happiness = aus.happiness + 5;
-	aus.sanity = aus.sanity - 3;
+	aus.sanity = aus.sanity + 3;
 }

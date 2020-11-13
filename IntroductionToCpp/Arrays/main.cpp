@@ -39,12 +39,15 @@ int main()
 
 	//count number of times value is found in array from starting point
 	//                       array[],size,value,start
-	int count = countElement(array, size, 1, 2);
+	int count = countElement(array, size, 4, 2);
 	std::cout << std::endl << count;
 
 	//if array has two or more of the same number say no to being unique, else yes
 	ArrayUniqueness(array, size);
 
+	//Reverse
+	reverse(array, size, 1, 10);
+	
 
 	return 0;
 }
