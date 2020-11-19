@@ -18,4 +18,9 @@ public:
 
 	const char* getString();
 
+	void set(const char* newText);
+
+	void append(const char* toAppend);
+
+	void trim(size_t numToTrim);
 };
