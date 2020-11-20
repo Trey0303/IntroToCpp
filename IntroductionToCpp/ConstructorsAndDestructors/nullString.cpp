@@ -104,3 +104,17 @@ void nulString::trim(size_t numToTrim)
 
 	data[insertIdx] = '\0';
 }
+
+//DeepVsShallow
+nulString::nulString(const nulString& other)
+{
+	size_t length = stringLength(other.data);
+
+	
+}
+
+nulString& nulString::operator=(const nulString& other)
+{
+	*data = *other.data;
+	return *this;
+}

@@ -14,7 +14,13 @@ public:
 
 	nulString(const char* initialText);
 
+	//DeepVsShallow
+	nulString(const nulString& other);
+
 	~nulString();
+
+	//DeepVsShallow
+	nulString& operator=(const nulString& other);
 
 	const char* getString();
 
