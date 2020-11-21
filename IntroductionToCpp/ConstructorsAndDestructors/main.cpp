@@ -21,5 +21,15 @@ int main()
 	trimTest.trim(21);
 	std::cout << trimTest.getString() << std::endl;
 
+	/*nulString dataA("A");
+	std::cout << dataA.getString() << std::endl;
+
+	nulString dataB(dataA);
+	std::cout << dataB.getString() << std::endl;
+
+	dataB = dataA;
+	std::cout << dataB.getString() << std::endl;*/
+
+
 	return 0;
 }

@@ -110,6 +110,14 @@ nulString::nulString(const nulString& other)
 {
 	size_t length = stringLength(other.data);
 
+	dataLength = length + 1;
+	data = new char[dataLength];
+
+	for (size_t i = 0; i < length; i++)
+	{
+		data[i] = other.data[i];
+	}
+	
 	
 }
 
