@@ -29,7 +29,7 @@ int main()
             break;
         }
         
-        int r = binary_search(array_to_be_sorted, 0, array_size - 1, search_key);
+        int r = binary_search(array_to_be_sorted, 0, array_size -1, search_key);
         if (r == -1)
         {
             std::cout << "Couldn't find " << search_key << " in the list" << std::endl;
