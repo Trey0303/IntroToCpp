@@ -18,5 +18,7 @@ int main()
 
 	digitalPrinter();
 
+	myInfo();
+
 	return 0;
 }
