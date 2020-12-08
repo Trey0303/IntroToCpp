@@ -34,7 +34,7 @@ void digitalPrinter()
 		}
 
 		//display if opened
-		while (readFile.eof())
+		while (!readFile.eof())
 		{
 			std::string line;
 			std::getline(readFile, line);
