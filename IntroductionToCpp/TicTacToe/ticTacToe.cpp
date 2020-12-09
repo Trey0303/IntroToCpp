@@ -30,3 +30,21 @@ void DrawBoard(char board[][])
 		std::cout << std::endl;
 	}
 }
+
+void playerOneTurn()
+{
+	std::cout << "X's Turn" << std::endl;
+	std::cout << "pick a number corresponding to the space you want on the grid." << std::endl;
+	//// Each move must be validated.
+	//	For example, if creating a console application ensure input entered by the player is valid.
+	//	o An invalid move or incorrect data should result in an appropriate error message.
+}
+
+void playerTwoTurn()
+{
+	std::cout << "O's Turn" << std::endl;
+	std::cout << "pick a number corresponding to the space you want on the grid." << std::endl;
+	//// Each move must be validated.
+	//	For example, if creating a console application ensure input entered by the player is valid.
+	//	o An invalid move or incorrect data should result in an appropriate error message.
+}

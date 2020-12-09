@@ -13,6 +13,9 @@ int main()
 	char playerOne = 'X';
 	char playerTwo = 'O';
 
+	//to know when there is a winner to stop game
+	bool winner = false;
+
 
 	//The 3x3 game board should be represented internally as a 2D array.
 	char numberBoard[3][3] = { { '1','2','3' },
@@ -30,10 +33,17 @@ int main()
 
 	//When a player places an ‘x’ or ‘o’ on the board, the player’s move should be stored in
 		//the corresponding location in the 2D array.
+
+	//have player one and two turns loop until there is a winner
+	while (!winner)
+	{
+	//playerOneTurn();
+
+	//playerTwoTurn();
 		
-	//// Each move must be validated.
-	//	For example, if creating a console application ensure input entered by the player is valid.
-	//	o An invalid move or incorrect data should result in an appropriate error message.
+	
+
+	}
 	
 
 
