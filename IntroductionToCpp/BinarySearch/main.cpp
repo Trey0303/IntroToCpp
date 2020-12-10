@@ -7,12 +7,7 @@ int main()
     //Define our data
     const int array_size = 25;
     int array_to_be_sorted[array_size] = {
-    14,65,63,1,54,
-    89,84,9,98,57,
-    71,18,21,84,69,
-    28,11,83,13,42,
-    64,58,78,82,13
-    };
+    1,9,11,13,13,14,18,21,28,42,54,57,58,63,64,65,69,71,78,82,83,84,84,89,98};
 
     ////Pointers as iterators version
     //std::sort(&array_to_be_sorted[0], &array_to_be_sorted[array_size]);
