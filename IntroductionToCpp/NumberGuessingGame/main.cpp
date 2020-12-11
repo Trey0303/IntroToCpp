@@ -8,19 +8,16 @@
 
 int main()
 {
-	int start = 0;
-
+	int start = 1;
+	int end = 100;
 	//need binary search
-	const int array_size = 20;
-	int array[array_size] = {
-	1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
 
 	//player picks number
-	std::cout << "pick a number between 0 and 20 and I will try to guess the number. " << std::endl;
+	std::cout << "pick a number between " << start << " and " << end << " I will try to guess the number. " << std::endl;
 	int inputNumber = -1;
 	std::cin >> inputNumber;
 
-	int r = GuessingGame(array, start, array_size, inputNumber);
+	int r = GuessingGame(start, end, inputNumber);
 
 	if (r == -1)
 	{
@@ -28,7 +25,7 @@ int main()
 	}
 	else
 	{
-		std::cout << "Your number is " << inputNumber << r << std::endl;
+		std::cout << "Your number is " << inputNumber << std::endl;
 	}
 
 	//HumanGuessingGame();

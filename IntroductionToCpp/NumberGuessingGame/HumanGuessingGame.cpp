@@ -7,7 +7,7 @@
 #include "GuessingGame.h"
 
 
-int GuessingGame(int array[], int start_index, int end_index, int key)
+int GuessingGame( int start_index, int end_index, int key)
 {
 	int guesses = 0;
 	char yes[20] = "y";
@@ -27,7 +27,7 @@ int GuessingGame(int array[], int start_index, int end_index, int key)
 			std::cin >> isItTheNum;
 			
 			
-			if (array[computerGuess] == key)
+			if (computerGuess == key)
 			{
 				if (strcmp(isItTheNum, yes) == 0)
 				{
@@ -45,7 +45,7 @@ int GuessingGame(int array[], int start_index, int end_index, int key)
 			}
 			//if computer gusses a number greater than human number
 				//computer will guess a lower number next try
-			if (key < array[computerGuess])
+			if (key < computerGuess)
 			{
 				//if player said no
 				if (strcmp(isItTheNum,no) == 0)
@@ -80,7 +80,7 @@ int GuessingGame(int array[], int start_index, int end_index, int key)
 			{
 				//if computer guesses a number lower than humnan number
 			// computer will guess a higher number next try
-				if(key > array[computerGuess])
+				if(key > computerGuess)
 				{
 					//if player said no
 					if (strcmp(isItTheNum, no) == 0)
