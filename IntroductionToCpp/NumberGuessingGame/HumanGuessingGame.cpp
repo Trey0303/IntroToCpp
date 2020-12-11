@@ -5,99 +5,119 @@
 #include <string>
 #include <ctime>
 #include "GuessingGame.h"
-void GuessingGame()
+
+
+int GuessingGame(int array[], int start_index, int end_index, int key)
 {
-	int computerGuess = 0;
 	int guesses = 0;
 	char yes[20] = "y";
 	char no[20] = "n";
 	char less[20] = "l";
 	char greater[20] = "g";
 
-	//need binary search
-
-	//player picks number
-	std::cout << "pick a number between 0 and " /*<< max*/ << " and I will try to guess the number. " << std::endl;
-	int inputNumber = 0;
-	std::cin >> inputNumber;
-
 	bool guessedNumber = false;
 	while (!guessedNumber)
 	{
-	//computer guesses a number
-		std::cout << "My guess is " << computerGuess << ", am I correct? y/n" << std::endl;
-		char isItTheNum[20];
-		std::cin >> isItTheNum;
-	//if computer gusses a number greater than human number
-		//computer will guess a lower number next try
-		
-		if (isItTheNum == no && computerGuess > inputNumber)
+		while (start_index <= end_index)
 		{
-			std::cout << "is your number, less than or greater than? " << computerGuess << "l/g" << std::endl;
-			char lessGreater[20];
-			std::cin >> lessGreater;
-
-			//if player says less
-			if (lessGreater == less)
+		//computer guesses a number
+			int computerGuess = (start_index + end_index) / 2;
+			std::cout << "My guess is " << computerGuess << ", am I correct? y/n" << std::endl;
+			char isItTheNum[20];
+			std::cin >> isItTheNum;
+			
+			
+			if (array[computerGuess] == key)
 			{
-				//computer guesses again
-				//count goes up by one
-				guesses++;
+				if (strcmp(isItTheNum, yes) == 0)
+				{
+					std::cout << "it took me " << guesses << " guesses to find your number" << std::endl;
+					guessedNumber = true;
+					return computerGuess;
+				}
+				//if player responds no to computers guess when computers guess is correct
+				else if (isItTheNum == no && computerGuess == key)
+				{
+					// computer will call out player for cheating
+					std::cout << "thats wrong, try again.(computer guessed right)" << std::endl;
+				}
+				
 			}
-			// if player says number is less than, computer will know player is cheating
-			else if (lessGreater == greater)
+			//if computer gusses a number greater than human number
+				//computer will guess a lower number next try
+			if (key < array[computerGuess])
 			{
-				std::cout << "lies, try again." << std::endl;
-				//get player to reply less or greater again until response equals less
-			}
-		}
-		else if (isItTheNum == no && computerGuess > inputNumber)
-		{
-			std::cout << "thats wrong, try again.(computer guessed wrong, computer has to guess a smaller number)" << std::endl;
-		}
-		
-		//if computer guesses a number lower than humnan number
-		// computer will guess a higher number next try
-		if (isItTheNum == no && computerGuess < inputNumber)
-		{
-			std::cout << "is your number, less than or greater than? " << computerGuess << "l/g" << std::endl;
-			char lessGreater[20];
-			std::cin >> lessGreater;
+				//if player said no
+				if (strcmp(isItTheNum,no) == 0)
+				{
+					std::cout << "is your number, less than or greater than " << computerGuess << "? l/g" << std::endl;
+					char lessGreater[20];
+					std::cin >> lessGreater;
 
-			//if player says less
-			if (lessGreater == greater)
+					//if player says less
+					if (strcmp(lessGreater, less) == 0 )
+					{
+						//computer guesses again
+						//count goes up by one
+						end_index = computerGuess - 1;
+						guesses++;
+					}
+					// if player says number is greater than, computer will know player is cheating
+					else if (strcmp(lessGreater, greater) == 0)
+					{
+						std::cout << "lies, try again." << std::endl;
+						//get player to reply less or greater again until response equals greater
+					}
+				}
+				//yes but computers guess is wrong
+				else if (strcmp(isItTheNum, yes) == 0)
+				{
+					std::cout << "thats wrong, try again.(computer guessed wrong, computer has to guess a smaller number)" << std::endl;
+				}
+				
+			}
+			else
 			{
-				//computer guesses again
-				//count goes up by one
-				guesses++;
-			}
-			// if player says number is greater than, computer will know player is cheating
-			else if (lessGreater == less)
-			{
-				std::cout << "lies, try again." << std::endl;
-				//get player to reply less or greater again until response equals greater
-			}
-		}
-		else if (isItTheNum == yes && computerGuess < inputNumber)
-		{
-			std::cout << "thats wrong, try again.(computer guessed wrong, computer has to guess a bigger number)" << std::endl;
-		}
+				//if computer guesses a number lower than humnan number
+			// computer will guess a higher number next try
+				if(key > array[computerGuess])
+				{
+					//if player said no
+					if (strcmp(isItTheNum, no) == 0)
+					{
+						std::cout << "is your number, less than or greater than " << computerGuess << "? l/g" << std::endl;
+						char lessGreater[20];
+						std::cin >> lessGreater;
 
-
-		if (isItTheNum == yes && computerGuess == inputNumber)
-		{
-			std::cout << "it took me " << guesses << " guesses to find your number" << std::endl;
-		}
-		//if player responds no to computers guess when computers guess is correct
-		else if (isItTheNum == no && computerGuess == inputNumber)
-		{
-			// computer will call out player for cheating
-			std::cout << "thats wrong, try again.(computer guessed right)" << std::endl;
+						//if player says greater
+						if (strcmp(lessGreater, greater) == 0)
+						{
+							//computer guesses again
+							//count goes up by one
+							start_index = computerGuess + 1;
+							guesses++;
+						}
+						// if player says number is less than, computer will know player is cheating
+						else if (strcmp(lessGreater, less) == 0)
+						{
+							std::cout << "lies, try again." << std::endl;
+							//get player to reply less or greater again until response equals less
+						}
+					}
+					//yes but computers guess is wrong
+					else if (strcmp(isItTheNum,yes) == 0)
+					{
+						std::cout << "thats wrong, try again.(computer guessed wrong, computer has to guess a bigger number)" << std::endl;
+					}
+					
+				}
+			}
+			
 		}
 
 
 	}
-
+	return -1;
 }
 
 
