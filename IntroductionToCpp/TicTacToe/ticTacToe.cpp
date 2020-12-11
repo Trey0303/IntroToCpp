@@ -6,7 +6,7 @@
 #include <ctime>
 #include "ticTacToe.h"
 
-void DrawBoard(char board[][])
+void DrawBoard(char board[3][3])
 {
 	//print board
 	for (int row = 0; row < 3; row++)

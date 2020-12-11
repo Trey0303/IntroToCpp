@@ -1,6 +1,6 @@
 #pragma once
 
-void DrawBoard(char board);
+void DrawBoard(char boar[3][3]);
 
 void playerOneTurn();
 
