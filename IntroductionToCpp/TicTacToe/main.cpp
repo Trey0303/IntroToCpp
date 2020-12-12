@@ -15,6 +15,8 @@ int main()
 
 	//to know when there is a winner to stop game
 	bool winner = false;
+	bool xTurn = true;
+	bool oTurn = false;
 
 
 	//The 3x3 game board should be represented internally as a 2D array.
@@ -26,7 +28,9 @@ int main()
 						 ' ',' ',' ',
 						 ' ',' ',' ' };
 
-
+	//print both boards
+	DrawBoard(gameBoard);
+	std::cout << std::endl;
 	DrawBoard(numberBoard);
 	
 
@@ -37,9 +41,37 @@ int main()
 	//have player one and two turns loop until there is a winner
 	while (!winner)
 	{
-	//playerOneTurn();
+		if (!winner && xTurn == true) 
+		{
+			//Xs turn
+			bool notXTurn = playerOneTurn(gameBoard, numberBoard, xTurn, oTurn);
+			xTurn = notXTurn;
+			std::cout << std::endl;
+			DrawBoard(gameBoard);
+			std::cout << std::endl;
+			DrawBoard(numberBoard);
+			std::cout << std::endl;
+			//Check if anyone has won
+			bool xWins = whoWon(gameBoard, numberBoard, winner);
+			winner = xWins;
 
-	//playerTwoTurn();
+		}
+		else if (!winner && xTurn == false)
+		{
+			//Os turn
+			bool isXTurn = playerTwoTurn(gameBoard, numberBoard, xTurn, oTurn);
+			xTurn = isXTurn;
+			std::cout << std::endl;
+			DrawBoard(gameBoard);
+			std::cout << std::endl;
+			DrawBoard(numberBoard);
+			std::cout << std::endl;
+			//Check if anyone has won
+			bool oWins = whoWon(gameBoard, numberBoard, winner);
+			winner = oWins;
+		}
+		
+
 		
 	
 

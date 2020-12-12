@@ -2,6 +2,8 @@
 
 void DrawBoard(char boar[3][3]);
 
-void playerOneTurn();
+bool playerOneTurn(char gBoard[3][3], char numBoard[3][3], bool xTurn, bool oTurn);
 
-void playerTwoTurn();
+bool playerTwoTurn(char gBoard[3][3], char numBoard[3][3], bool xTurn, bool oTurn);
+
+bool whoWon(char gBoard[3][3], char numBoard[3][3], bool winner);
