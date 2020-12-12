@@ -31,13 +31,15 @@ bool TeamOneTurn(Unit teamOne[], Unit teamTwo[], int teamOneSize, int teamTwoSiz
 		{
 			//randomly picks a number
 			teamOne[i].attackWho = whoToAttack();
-			
+			std::cout << teamOne[i].name << "attacks ";
+
 			for (int i = 0; i < teamTwoSize; i++)
 			{
 				if (teamTwo[i].number == teamOne[i].attackWho)
 				{
 					teamTwo[i].health = teamTwo[i].health - teamOne[i].attack;
-					return done;
+					std::cout << teamTwo[i].name << " and deals " << teamOne[i].attack << " damage." << std::endl;
+					return teamTwo[i].health;
 				}
 
 			}

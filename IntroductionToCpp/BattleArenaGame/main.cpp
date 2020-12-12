@@ -6,6 +6,7 @@
 #include <ctime>
 #include "BattleArenaGame.h"
 #include <vector>
+#include <limits>
 
 int main()
 {
@@ -81,10 +82,37 @@ int main()
 	int teamOneSize = teamOne.size();
 	int teamTwoSize = teamTwo.size();
 
+
 	bool done = false;
 	while(!done)
 	{
-		done = TeamOneTurn(teamOne, teamTwo, teamOneSize, teamTwoSize, done);
+		std::cout <<  "Team One: " << std::endl;
+		for (int i = 0; i < teamOne.size(); i++)
+		{
+			std::cout << " " << teamOne[i].name << " " << std::endl;
+			std::cout << " " << "health: " << teamOne[i].health << " " << std::endl;
+			std::cout << " " << "attack: " << teamOne[i].attack << " " << std::endl;
+			std::cout << " " << std::endl;
+		}
+
+		std::cout << "Team Two: " << std::endl;
+		for (int i = 0; i < teamTwo.size(); i++)
+		{
+			std::cout << " " << teamTwo[i].name << " " << std::endl;
+			std::cout << " " << "health: " << teamOne[i].health << " " << std::endl;
+			std::cout << " " << "attack: " << teamOne[i].attack << " " << std::endl;
+			std::cout << " " << std::endl;
+		}
+
+		cout << "Press Enter to Continue";
+		cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+		//cin.ignore();
+		/*teamTwo[] =*/ TeamOneTurn(teamOne.data(), teamTwo.data(), teamOneSize, teamTwoSize, done);
+		//std::cout << " Press Enter " << std::endl;
+
+		cout << "Press Enter to Continue";
+		cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+		//cin.ignore();
 		
 	}
 
