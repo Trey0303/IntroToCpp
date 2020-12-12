@@ -109,6 +109,7 @@ int main()
 		cout << "Press Enter to Continue";
 		cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
 
+		//if done still is false run code inside if statement
 		if (!done)
 		{
 			//team ones turn
@@ -119,7 +120,8 @@ int main()
 			cout << "Press Enter to Continue";
 			cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
 		}
-		
+
+		//if done still is false run code inside if statement
 		if (!done)
 		{
 			//team twos turn

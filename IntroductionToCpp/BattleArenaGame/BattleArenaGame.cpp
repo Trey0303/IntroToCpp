@@ -71,25 +71,28 @@ bool stillOkOne(Unit team[], int teamSize, bool done)
 	int count = 0;
 	for (int i = 0; i < teamSize; i++)
 	{
-		
+		//if someone health is at 0 or less than 0
 		if (team[i].health <= 0)
 		{
 			std::cout << team[i].name << " is out of the fight.";
+			//no longer able to fight
 			team[i].alive = false;
 			count++;
 		}
 		
 
 	}
+	//if goes through entire for loop and everyone is set to false and count eqauls size
 	if (count == teamSize)
 	{
+		//team 2 wins and team 1 loses
 		std::cout << "Team 1 is defeated. Team 2 Wins." << std::endl;
 		done = true;
 	}
 	
 	return done;
 }
-
+//same as stillOkOne but checks team one instead
 bool stillOkTwo(Unit team[], int teamSize, bool done)
 {
 	int count = 0;
