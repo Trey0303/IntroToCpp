@@ -112,7 +112,7 @@ int main()
 		if (!done)
 		{
 			//team ones turn
-			TeamOneTurn(teamOne.data(), teamTwo.data(), teamOneSize, teamTwoSize, done);
+			TeamOneTurn(teamOne.data(), teamTwo.data(), teamOneSize - 1, teamTwoSize -1, done);
 
 			stillOkTwo(teamTwo.data(), teamTwoSize, done);
 
@@ -123,7 +123,7 @@ int main()
 		if (!done)
 		{
 			//team twos turn
-			TeamTwoTurn(teamOne.data(), teamTwo.data(), teamOneSize, teamTwoSize, done);
+			TeamTwoTurn(teamOne.data(), teamTwo.data(), teamOneSize - 1, teamTwoSize - 1, done);
 		
 			stillOkOne(teamTwo.data(), teamTwoSize, done);
 
