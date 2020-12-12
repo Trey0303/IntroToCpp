@@ -31,7 +31,7 @@ int TeamOneTurn(Unit teamOne[], Unit teamTwo[], int teamOneSize, int teamTwoSize
 		{
 			//randomly picks a number
 			int atkIdx = whoToAttack();
-			std::cout << teamOne[i].name << "attacks ";
+			std::cout << teamOne[i].name << " attacks ";
 
 			teamTwo[atkIdx].health = teamTwo[atkIdx].health - teamOne[i].attack;
 			std::cout << teamTwo[atkIdx].name << " and deals " << teamOne[i].attack << " damage." << std::endl;
@@ -39,10 +39,79 @@ int TeamOneTurn(Unit teamOne[], Unit teamTwo[], int teamOneSize, int teamTwoSize
 		}
 	}
 	
-	std::cout << "Team 1 is defeated. Team 2 Wins." << std::endl;
-	done = true;
-	return done;
+	
 
+
+}
+
+int TeamTwoTurn(Unit teamOne[], Unit teamTwo[], int teamOneSize, int teamTwoSize, bool done)
+{
+
+	//matches number to member in team getting attcked
+	for (int i = 0; i < teamTwoSize; i++)
+	{
+		if (teamTwo[i].alive == true)
+		{
+			//randomly picks a number
+			int atkIdx = whoToAttack();
+			std::cout << teamTwo[i].name << " attacks ";
+
+			teamOne[atkIdx].health = teamOne[atkIdx].health - teamTwo[i].attack;
+			std::cout << teamOne[atkIdx].name << " and deals " << teamTwo[i].attack << " damage." << std::endl;
+			return teamOne[atkIdx].health;
+		}
+	}
+
+	
+
+}
+
+bool stillOkOne(Unit team[], int teamSize, bool done)
+{
+	int count = 0;
+	for (int i = 0; i < teamSize; i++)
+	{
+		
+		if (team[i].health <= 0)
+		{
+			std::cout << team[i].name << " is out of the fight.";
+			team[i].alive = false;
+			count++;
+		}
+		
+
+	}
+	if (count == teamSize)
+	{
+		std::cout << "Team 1 is defeated. Team 2 Wins." << std::endl;
+		done = true;
+	}
+	
+	return done;
+}
+
+bool stillOkTwo(Unit team[], int teamSize, bool done)
+{
+	int count = 0;
+	for (int i = 0; i < teamSize; i++)
+	{
+
+		if (team[i].health <= 0)
+		{
+			std::cout << team[i].name << " is out of the fight.";
+			team[i].alive = false;
+			count++;
+		}
+		
+
+	}
+	if (count == teamSize)
+	{
+		std::cout << "Team 2 is defeated. Team 1 Wins." << std::endl;
+		done = true;
+	}
+
+	return done;
 }
 
 int random(int max)

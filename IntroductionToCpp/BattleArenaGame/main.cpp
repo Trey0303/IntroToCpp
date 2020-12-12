@@ -87,6 +87,7 @@ int main()
 	bool done = false;
 	while(!done)
 	{
+		//checks characters and stats
 		std::cout <<  "Team One: " << std::endl;
 		for (int i = 0; i < teamOne.size(); i++)
 		{
@@ -107,13 +108,30 @@ int main()
 
 		cout << "Press Enter to Continue";
 		cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
-		//cin.ignore();
-		TeamOneTurn(teamOne.data(), teamTwo.data(), teamOneSize, teamTwoSize, done);
-		//std::cout << " Press Enter " << std::endl;
 
-		cout << "Press Enter to Continue";
-		cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
-		//cin.ignore();
+		if (!done)
+		{
+			//team ones turn
+			TeamOneTurn(teamOne.data(), teamTwo.data(), teamOneSize, teamTwoSize, done);
+
+			stillOkTwo(teamTwo.data(), teamTwoSize, done);
+
+			cout << "Press Enter to Continue";
+			cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+		}
+		
+		if (!done)
+		{
+			//team twos turn
+			TeamTwoTurn(teamOne.data(), teamTwo.data(), teamOneSize, teamTwoSize, done);
+		
+			stillOkOne(teamTwo.data(), teamTwoSize, done);
+
+			cout << "Press Enter to Continue";
+			cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+
+		}
+		
 		
 	}
 
