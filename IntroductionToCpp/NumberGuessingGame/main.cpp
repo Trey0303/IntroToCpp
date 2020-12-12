@@ -24,12 +24,7 @@ int main()
 	{
 		std::cout << "something went wrong" << std::endl;
 	}
-	else
-	{
-		std::cout << "Your number is " << inputNumber << std::endl;
-		cout << "Press Enter to end";
-		cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
-	}
+	
 
 	//HumanGuessingGame();
 	return 0;

@@ -5,6 +5,7 @@
 #include <string>
 #include <ctime>
 #include "GuessingGame.h"
+using namespace std;
 
 
 int GuessingGame( int start_index, int end_index, int key)
@@ -32,6 +33,7 @@ int GuessingGame( int start_index, int end_index, int key)
 				if (strcmp(isItTheNum, yes) == 0)
 				{
 					std::cout << "it took me " << guesses << " guesses to find your number" << std::endl;
+					std::cout << "Your number is " << key << std::endl;
 					guessedNumber = true;
 					return computerGuess;
 				}
