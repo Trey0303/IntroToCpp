@@ -19,4 +19,4 @@ float attack();
 int random(int max);
 int random(int min, int max);
 float whoToAttack();
-bool TeamOneTurn(Unit teamOne[], Unit teamTwo[], int teamOneSize, int teamTwoSize, bool done);
+int TeamOneTurn(Unit teamOne[], Unit teamTwo[], int teamOneSize, int teamTwoSize, bool done);

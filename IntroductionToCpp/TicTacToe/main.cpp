@@ -13,6 +13,8 @@ int main()
 	char playerOne = 'X';
 	char playerTwo = 'O';
 
+	int count = 0;
+
 	//to know when there is a winner to stop game
 	bool winner = false;
 	bool xTurn = true;
@@ -52,8 +54,10 @@ int main()
 			DrawBoard(numberBoard);
 			std::cout << std::endl;
 			//Check if anyone has won
-			bool xWins = whoWon(gameBoard, numberBoard, winner);
+			count++;
+			bool xWins = whoWon(gameBoard, numberBoard, winner, count);
 			winner = xWins;
+			
 
 		}
 		else if (!winner && xTurn == false)
@@ -67,7 +71,8 @@ int main()
 			DrawBoard(numberBoard);
 			std::cout << std::endl;
 			//Check if anyone has won
-			bool oWins = whoWon(gameBoard, numberBoard, winner);
+			count++;
+			bool oWins = whoWon(gameBoard, numberBoard, winner, count);
 			winner = oWins;
 		}
 		

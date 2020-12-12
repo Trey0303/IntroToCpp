@@ -21,7 +21,7 @@
 //	
 //}
 
-bool TeamOneTurn(Unit teamOne[], Unit teamTwo[], int teamOneSize, int teamTwoSize, bool done)
+int TeamOneTurn(Unit teamOne[], Unit teamTwo[], int teamOneSize, int teamTwoSize, bool done)
 {
 	
 	//matches number to member in team getting attcked
@@ -30,19 +30,12 @@ bool TeamOneTurn(Unit teamOne[], Unit teamTwo[], int teamOneSize, int teamTwoSiz
 		if (teamOne[i].alive == true)
 		{
 			//randomly picks a number
-			teamOne[i].attackWho = whoToAttack();
+			int atkIdx = whoToAttack();
 			std::cout << teamOne[i].name << "attacks ";
 
-			for (int i = 0; i < teamTwoSize; i++)
-			{
-				if (teamTwo[i].number == teamOne[i].attackWho)
-				{
-					teamTwo[i].health = teamTwo[i].health - teamOne[i].attack;
-					std::cout << teamTwo[i].name << " and deals " << teamOne[i].attack << " damage." << std::endl;
-					return teamTwo[i].health;
-				}
-
-			}
+			teamTwo[atkIdx].health = teamTwo[atkIdx].health - teamOne[i].attack;
+			std::cout << teamTwo[atkIdx].name << " and deals " << teamOne[i].attack << " damage." << std::endl;
+			return teamTwo[atkIdx].health;
 		}
 	}
 	
@@ -71,6 +64,6 @@ float attack()
 
 float whoToAttack()
 {
-	return random(25, 50);
+	return random(0, 6);
 
 }

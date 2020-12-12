@@ -6,4 +6,4 @@ bool playerOneTurn(char gBoard[3][3], char numBoard[3][3], bool xTurn, bool oTur
 
 bool playerTwoTurn(char gBoard[3][3], char numBoard[3][3], bool xTurn, bool oTurn);
 
-bool whoWon(char gBoard[3][3], char numBoard[3][3], bool winner);
+bool whoWon(char gBoard[3][3], char numBoard[3][3], bool winner, int count);

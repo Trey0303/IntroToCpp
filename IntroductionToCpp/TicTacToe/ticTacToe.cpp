@@ -31,7 +31,7 @@ void DrawBoard(char board[3][3])
 	}
 }
 
-bool whoWon(char gBoard[3][3], char numBoard[3][3], bool winner)
+bool whoWon(char gBoard[3][3], char numBoard[3][3], bool winner, int count)
 {
 	//Win conditions
 	
@@ -155,36 +155,11 @@ bool whoWon(char gBoard[3][3], char numBoard[3][3], bool winner)
 		winner = true;
 		return winner;
 	}
-	//board full/no winner
-	/*else if(gBoard[0][0] == 'X')
+	//board full/no winner/if all turns are exausted
+	if(count == 9)
 	{
-		if(gBoard[0][1] == 'X' || gBoard[0][1] == 'O')
-		{	
-			if (gBoard[0][2] == 'X' || gBoard[0][2] == 'O')
-			{
-				if (gBoard[1][0] == 'X' || gBoard[1][0] == 'O')
-				{
-					if (gBoard[1][1] == 'X' || gBoard[1][1] == 'O')
-					{
-						if (gBoard[1][2] == 'X' || gBoard[1][2] == 'O')
-						{
-							if (gBoard[2][0] == 'X' || gBoard[2][0] == 'O')
-							{
-								if (gBoard[2][1] == 'X' || gBoard[2][1] == 'O')
-								{
-									if (gBoard[2][2] == 'X' || gBoard[2][2] == 'O')
-									{
-										std::cout << "tie" << std::endl;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		
-	}*/
+		std::cout << "tie" << std::endl;
+	}
 	else
 	{
 		winner = false;

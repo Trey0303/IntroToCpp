@@ -10,7 +10,8 @@
 
 int main()
 {
-	
+	srand(time(NULL));
+
 	vector<Unit> teamOne;
 	teamOne.push_back(Unit());
 	teamOne[0].name = "Iron Man";
@@ -99,15 +100,15 @@ int main()
 		for (int i = 0; i < teamTwo.size(); i++)
 		{
 			std::cout << " " << teamTwo[i].name << " " << std::endl;
-			std::cout << " " << "health: " << teamOne[i].health << " " << std::endl;
-			std::cout << " " << "attack: " << teamOne[i].attack << " " << std::endl;
+			std::cout << " " << "health: " << teamTwo[i].health << " " << std::endl;
+			std::cout << " " << "attack: " << teamTwo[i].attack << " " << std::endl;
 			std::cout << " " << std::endl;
 		}
 
 		cout << "Press Enter to Continue";
 		cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
 		//cin.ignore();
-		/*teamTwo[] =*/ TeamOneTurn(teamOne.data(), teamTwo.data(), teamOneSize, teamTwoSize, done);
+		TeamOneTurn(teamOne.data(), teamTwo.data(), teamOneSize, teamTwoSize, done);
 		//std::cout << " Press Enter " << std::endl;
 
 		cout << "Press Enter to Continue";
